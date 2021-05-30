@@ -11,6 +11,11 @@ jobs:
       - name: multiline script
         run: |
           ls -ltra
-          pwda
+          pwd
           node -v
           npm -v
+      - name: python Commands
+        run: | 
+          import platform
+          print(platform.processor())
+        shell: python
