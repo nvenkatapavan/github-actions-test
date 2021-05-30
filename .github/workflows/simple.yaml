@@ -2,8 +2,6 @@ name: Shell Commands
 
 on: [push, pull_request]
 
-env:
-  ACTIONS_RUNNER_DEBUG: true
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
