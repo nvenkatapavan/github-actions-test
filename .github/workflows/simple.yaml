@@ -11,6 +11,6 @@ jobs:
       - name: multiline script
         run: |
           ls -ltra
-          pwd
+          pwda
           node -v
           npm -v
