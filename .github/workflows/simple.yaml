@@ -10,10 +10,22 @@ jobs:
         run: echo "Hello world"
       - name: multiline script
         run: |
-          ls -ltra
-          pwd
-          node -v
-          npm -v
+          #!/usr/bin/env bash
+
+          if "${{ !github.event.issue.pull_request }}" ;  then
+            export GIT_PULL_REQUEST=true
+            echo "Git Pull Request: true"
+          else :
+            echo "Git Pull Request: false"
+          fi
+
+          echo "Github Repository: $GITHUB_REPOSITORY"
+
+          export GIT_BRANCH="${{ github.base_ref }}"
+          echo "Git Branch: $GIT_BRANCH"
+
+          echo "Git Workspace: $GITHUB_WORKSPACE"
+
       - name: python Commands
         run: | 
           import platform
