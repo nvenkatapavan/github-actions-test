@@ -21,7 +21,7 @@ jobs:
 
           echo "Github Repository: $GITHUB_REPOSITORY"
 
-          export GIT_BRANCH="${{ github.base_ref }}"
+          export GIT_BRANCH="${{ !github.base_ref }}"
           echo "Git Branch: $GIT_BRANCH"
 
           echo "Git Workspace: $GITHUB_WORKSPACE"
